@@ -4,8 +4,10 @@
     <span class="bg-secondary pr-3">Categories</span>
   </h2>
   <div class="row px-xl-5 pb-3">
-    <app-category [categoryName]="c.name" [imageUrl]="c.imageUrl"
-      *ngFor="let c of categories"
+    <!-- ngFor : loop -->
+    <app-category
+      [category]="c"
+      *ngFor="let c of categories; let i = index"
       class="col-lg-3 col-md-4 col-sm-6 pb-1"
     ></app-category>
   </div>
