@@ -15,6 +15,7 @@ import { StarsComponent } from './components/stars/stars.component';
 import { ShopdetailsComponent } from './components/layouts/shopdetails/shopdetails.component';
 import { ContactComponent } from './components/layouts/contact/contact.component';
 import { CheckoutComponent } from './components/layouts/checkout/checkout.component';
+import { ShoppingcartComponent } from './components/layouts/shoppingcart/shoppingcart.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { CheckoutComponent } from './components/layouts/checkout/checkout.compon
     StarsComponent,
     ShopdetailsComponent,
     ContactComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    ShoppingcartComponent
   ],
   imports: [
     BrowserModule,
