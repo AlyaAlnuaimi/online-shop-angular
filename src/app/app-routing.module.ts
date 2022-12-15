@@ -6,6 +6,7 @@ import { ShopComponent } from './components/layouts/shop/shop.component';
 import { ShopdetailsComponent } from './components/layouts/shopdetails/shopdetails.component';
 import { ContactComponent } from './components/layouts/contact/contact.component';
 import { CheckoutComponent } from './components/layouts/checkout/checkout.component';
+import { ShoppingcartComponent } from './components/layouts/shoppingcart/shoppingcart.component';
 
 // roots for every page
 const routes: Routes = [
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path:'shop', component: ShopComponent},
   {path:'shopdetails', component: ShopdetailsComponent},
   {path:'contact', component: ContactComponent},
-  {path:'checkout', component: CheckoutComponent}
+  {path:'checkout', component: CheckoutComponent},
+  {path:'shoppingcart', component: ShoppingcartComponent}
 ];
 
 @NgModule({
