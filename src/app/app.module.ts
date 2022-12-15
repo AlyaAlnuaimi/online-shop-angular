@@ -12,6 +12,8 @@ import { CategoriesComponent } from './categories/categories.component';
 import { CategoryComponent } from './category/category.component';
 import { ProductComponent } from './components/product/product.component';
 import { StarsComponent } from './components/stars/stars.component';
+import { ShopdetailsComponent } from './components/layouts/shopdetails/shopdetails.component';
+import { ContactComponent } from './components/layouts/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { StarsComponent } from './components/stars/stars.component';
     CategoriesComponent,
     CategoryComponent,
     ProductComponent,
-    StarsComponent
+    StarsComponent,
+    ShopdetailsComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
