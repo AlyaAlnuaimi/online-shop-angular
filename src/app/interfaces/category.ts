@@ -1,6 +1,7 @@
 export interface Category {
-    categoryName:string;
-    imageUrl:string;
+    _id:string;
+    name:string;
+    image:string;
     // ? : mean can be null
     productCount?:number;
 }

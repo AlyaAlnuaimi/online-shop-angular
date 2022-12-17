@@ -16,6 +16,7 @@ import { ShopdetailsComponent } from './components/layouts/shopdetails/shopdetai
 import { ContactComponent } from './components/layouts/contact/contact.component';
 import { CheckoutComponent } from './components/layouts/checkout/checkout.component';
 import { ShoppingcartComponent } from './components/layouts/shoppingcart/shoppingcart.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ShoppingcartComponent } from './components/layouts/shoppingcart/shoppin
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
