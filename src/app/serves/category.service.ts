@@ -2,6 +2,7 @@
 import { Injectable } from '@angular/core';
 import { Category } from '../interfaces/category';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environment/environment.prod';
 @Injectable({
   providedIn: 'root'
 })
@@ -10,6 +11,6 @@ export class CategoryService {
   constructor(private httpClient: HttpClient) { }
   // get the data from database 
   getCategories(): any {
-    this.httpClient.get('http://localhost:4200/api/categories/');
+    this.httpClient.get(`${environment.apiUrl}categories/`);
   }
 }

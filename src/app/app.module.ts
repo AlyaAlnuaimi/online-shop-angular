@@ -17,6 +17,7 @@ import { ContactComponent } from './components/layouts/contact/contact.component
 import { CheckoutComponent } from './components/layouts/checkout/checkout.component';
 import { ShoppingcartComponent } from './components/layouts/shoppingcart/shoppingcart.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ProductsComponent } from './components/products/products.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { HttpClientModule } from '@angular/common/http';
     ShopdetailsComponent,
     ContactComponent,
     CheckoutComponent,
-    ShoppingcartComponent
+    ShoppingcartComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,
