@@ -1,8 +1,13 @@
 export interface Product {
-    productName:string;
-    imageUrl:string;
-    Price:number;
+    _id: string;
+    name:string;
+    image:string;
+    category_id:number;
+    price:number;
     discount:number;
-   // rating:number
-   // ratingCount:number;
+    rating:number;
+    rating_cout:number;
+    is_featured: boolean;
+    is_recent:boolean;
+    description:string;
 }

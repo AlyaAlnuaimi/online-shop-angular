@@ -18,6 +18,9 @@ import { CheckoutComponent } from './components/layouts/checkout/checkout.compon
 import { ShoppingcartComponent } from './components/layouts/shoppingcart/shoppingcart.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductsComponent } from './components/products/products.component';
+import { CartComponent } from './components/layouts/cart/cart.component';
+import { CartTableComponent } from './components/cart-table/cart-table.component';
+import { CartTotalComponent } from './components/cart-total/cart-total.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,10 @@ import { ProductsComponent } from './components/products/products.component';
     ContactComponent,
     CheckoutComponent,
     ShoppingcartComponent,
-    ProductsComponent
+    ProductsComponent,
+    CartComponent,
+    CartTableComponent,
+    CartTotalComponent
   ],
   imports: [
     BrowserModule,

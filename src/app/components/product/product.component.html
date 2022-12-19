@@ -7,12 +7,12 @@
     <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
       <div class="product-item bg-light mb-4">
         <div class="product-img position-relative overflow-hidden">
-          <img class="img-fluid w-100" [src]="product.imageUrl" alt="" />
+          <img class="img-fluid w-100" [src]="product.image" alt="" />
           <div class="product-action">
             <!--function to add product to cart -->
             <a
               class="btn btn-outline-dark btn-square"
-              href="#"
+              
               (click)="addProductToCart()"
               ><i class="fa fa-shopping-cart"></i
             ></a>
@@ -29,20 +29,21 @@
         </div>
         <div class="text-center py-4">
           <a class="h6 text-decoration-none text-truncate" href="">{{
-            product.productName
+            product.name
           }}</a>
           <div class="d-flex align-items-center justify-content-center mt-2">
-            <h5>{{ product.Price * product.discount }}</h5>
+            <h5>{{ product.price * product.discount }}</h5>
             <h6 class="text-muted ml-2">
-              <del>{{ product.Price }}</del>
+              <del>{{ product.price }}</del>
             </h6>
           </div>
           <!--rating stars
           <app-stars
             [rating]="product.rating"
-            [Count]="product.ratingCount"
+            [Count]="product.rating_cout"
           ></app-stars>
           -->
+          {{product.is_featured}}
         </div>
       </div>
     </div>
