@@ -36,12 +36,6 @@ export class ShopdetailsComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.timer = setInterval(() => {
-      console.log(new Date())
-    }, 1000);
-  }
-
-  ngOnDestroy(): void {
-     clearInterval(this.timer);
+    
   }
 }

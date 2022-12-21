@@ -36,7 +36,6 @@ export class CartComponent {
     rating:4.5,
     rating_cout:45,
     },
-    
   },
 ];
 
