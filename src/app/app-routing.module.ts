@@ -13,7 +13,7 @@ import { CartComponent } from './components/layouts/cart/cart.component';
 const routes: Routes = [
   {path:'', component: HomeComponent},
   {path:'shop', component: ShopComponent},
-  {path:'shopdetails', component: ShopdetailsComponent},
+  {path:'shopdetails/:id', component: ShopdetailsComponent},
   {path:'contact', component: ContactComponent},
   {path:'checkout', component: CheckoutComponent},
   {path:'shoppingcart', component: ShoppingcartComponent},

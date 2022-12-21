@@ -27,7 +27,7 @@
           </div>
         </div>
         <div class="text-center py-4">
-          <a class="h6 text-decoration-none text-truncate" href="">{{
+          <a class="h6 text-decoration-none text-truncate" [routerLink]="['/shopdetails',product._id]">{{
             product.name
           }}</a>
           <div class="d-flex align-items-center justify-content-center mt-2">
@@ -36,13 +36,13 @@
               <del>{{ product.price }}</del>
             </h6>
           </div>
-          <!--rating stars
+          rating stars
           <app-stars
             [rating]="product.rating"
-            [Count]="product.rating_cout"
+            [count]="product.rating_cout"
           ></app-stars>
-          -->
-          {{product.is_featured}}
+          
+          {{ product.is_featured }}
         </div>
       </div>
     </div>

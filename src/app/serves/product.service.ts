@@ -23,4 +23,12 @@ export class ProductService {
     addProduct(product: Product): void {
       this.cartProducts.push(product);
     }
+
+    getProductById(id:string){
+      return this.httpClient.get(`${environment.apiUrl}products/${id}`)
+    }
+
+    getProductByCategoryId(id:number){
+      return this.httpClient.get(`${environment.apiUrl}products/getByCategoryId/${id}`)
+    }
 }

@@ -8,11 +8,12 @@ import { Component, Input } from '@angular/core';
 export class StarsComponent {
   @Input() rating: number= 0;
   @Input() count:number = 0;
+  @Input() center:boolean = true;
 
-  //getClass(r:number): string{
-  //  if(r <= this.rating) return 'fa fa-star text-primary mr-1';
-  //  else if(r <= this.rating + 0.5) return 'fa fa-star-half-alt text-primary mr-1';
-   // return 'far fa-star text-primary mr-1';
-    
- // }
+  getClass(r:number): string{
+    if(r <= this.rating) return 'fa fa-star text-primary mr-1';
+    else if(r <= this.rating + 0.5) return 'fa fa-star-half-alt text-primary mr-1';
+    return 'far fa-star text-primary mr-1';
+
+  }
 }
