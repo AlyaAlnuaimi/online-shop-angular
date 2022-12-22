@@ -21,6 +21,9 @@ import { ProductsComponent } from './components/products/products.component';
 import { CartComponent } from './components/layouts/cart/cart.component';
 import { CartTableComponent } from './components/cart-table/cart-table.component';
 import { CartTotalComponent } from './components/cart-total/cart-total.component';
+import { ProductsFilterComponent } from './components/products-filter/products-filter.component';
+import { ProductsShopComponent } from './components/products-shop/products-shop.component';
+import { ProductsPaginationComponent } from './components/products-pagination/products-pagination.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +43,10 @@ import { CartTotalComponent } from './components/cart-total/cart-total.component
     ProductsComponent,
     CartComponent,
     CartTableComponent,
-    CartTotalComponent
+    CartTotalComponent,
+    ProductsFilterComponent,
+    ProductsShopComponent,
+    ProductsPaginationComponent
   ],
   imports: [
     BrowserModule,

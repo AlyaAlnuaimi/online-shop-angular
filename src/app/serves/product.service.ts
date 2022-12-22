@@ -15,6 +15,12 @@ export class ProductService {
         return this.httpClient.get(`${environment.apiUrl}products/getFeatured`
           );
     }
+
+    getProduct():any {
+      return this.httpClient.get(`${environment.apiUrl}products`
+        );
+  }
+
     // we can store the database url in the environment
     getRecentProducts() :any {
       return this.httpClient.get(`${environment.apiUrl}products/getRecent`)

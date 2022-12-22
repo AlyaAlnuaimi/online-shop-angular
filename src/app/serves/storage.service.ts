@@ -9,12 +9,36 @@ export class StorageService {
 
   constructor() { }
 
-  addProduct(product: Product, quantity:number){
-    //add product to localstorage as flat products (array pf products not cartlines)
+  getProductsFromLocalStorage() {
+    return JSON.parse(localStorage.getItem('products') || '[]');
   }
 
-  getCartLines(): CartLine[] {
-    //convert array of products into caartlines array and return it 
-    return[];
+  addProduct(product: Product, quantity:number){
+    //add product to localstorage as flat products (array pf products not cartlines)
+    const products: Product[] = this.getProductsFromLocalStorage();
+    for (let index = 0; index < quantity; index++) {
+      products.push(product);
+  }
+  localStorage.setItem('products', JSON.stringify(products));
+}
+
+
+getCartLines(): CartLine[] {
+  const products: Product[] = this.getProductsFromLocalStorage();
+  const cartLines: CartLine[] = [];
+  products.forEach((p) => {
+    const ix = cartLines.findIndex((x) => x.product._id === p._id);
+    if (ix >= 0) {
+      cartLines[ix].quantity += 1;
+    } else {
+      cartLines.push({
+        price: p.price,
+        product: p,
+        quantity: 1,
+      });
+    }
+  });
+  return cartLines;
   }
 }
+
