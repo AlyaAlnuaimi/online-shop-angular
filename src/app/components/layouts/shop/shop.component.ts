@@ -9,7 +9,9 @@ import { ProductService } from 'src/app/serves/product.service';
 })
 export class ShopComponent implements OnInit{
   products:Product[] = [];
-  filter:any = {prices:null, sizes:null, colors:null};
+  filter:any = {prices:[{min:0,max:0}], 
+    sizes:[''], 
+    colors:['']};
 
   constructor(private productService:ProductService) {}
 
@@ -30,17 +32,20 @@ export class ShopComponent implements OnInit{
     }
 
     filterPrice(p : Product){
-      if(this.filter.prices==null) return true;
-      return (this.filter.prices.findIndex((x:any)=>x.min<=p.price && x.max >=p.price) >=0);
+      
+      return (
+        this.filter.prices.findIndex(
+        (x:any) => (x.min<=p.price && x.max >=p.price) || (x.min == 0 && x.max ==0)
+      )>=0);
     }
 
     filterSize(p : Product){
-      if(this.filter.sizes==null) return true;
+      if(this.filter.sizes.includes('')) return true;
       return this.filter.sizes.includes(p.size);
     }
 
     filterColor(p : Product){
-      if(this.filter.colors==null) return true;
+      if(this.filter.colors.includes('')) return true;
       return this.filter.colors.includes(p.color);
     }
 }
