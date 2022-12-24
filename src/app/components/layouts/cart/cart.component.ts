@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CartLine } from 'src/app/interfaces/cart-line';
+import { StorageService } from 'src/app/serves/storage.service';
 
 @Component({
   selector: 'app-cart',
@@ -8,40 +9,11 @@ import { CartLine } from 'src/app/interfaces/cart-line';
 })
 export class CartComponent {
   // big component => i want to send to cart table 
-  cartLines:CartLine[] = [{ price:100, quantity: 2, product: {
-    _id:'0',
-    category_id:1,
-    description:'',
-    discount:0.1,
-    image:'/assets/img/prod-1.jpg',
-    is_featured: true,
-    is_recent: true,
-    name: 'Product 1',
-    price: 100,
-    rating:4.5,
-    rating_cout:45,
-    color:'white',
-    size:'s'
-    },
-    
-  },
-  { price:150, quantity: 2, product: {
-    _id:'0',
-    category_id:1,
-    description:'',
-    discount:0.1,
-    image:'/assets/img/prod-2.jpg',
-    is_featured: true,
-    is_recent: true,
-    name: 'Product 2',
-    price: 150,
-    rating:4.5,
-    rating_cout:45,
-    color:'white',
-    size:'s'
-    },
-  },
-];
+  cartLines:CartLine[] = [];
+
+  constructor(private storageService:StorageService){
+    this.cartLines = storageService.getCartLines();
+  }
 
 getTotal():number {
   return this.getShipping() + this.getSubTotal();
@@ -52,12 +24,8 @@ getSubTotal():number{
   .reduce((a,v) => (a += v), 0);
   }
 getShipping():number{
-  return this.cartLines
+  return ( this.cartLines
   .map((x) => x.quantity)
-  .reduce((a,v) => (a += v), 0) * 2;
-  }
-
-  showAlert(msg:string){
-    alert(msg);
+  .reduce((a,v) => (a += v), 0) * 2);
   }
 }

@@ -9,7 +9,7 @@ export class StorageService {
 
   constructor() { }
 
-  getProductsFromLocalStorage() {
+  getProductsFromLocalStorage():Product[] {
     return JSON.parse(localStorage.getItem('products') || '[]');
   }
 
@@ -39,6 +39,20 @@ getCartLines(): CartLine[] {
     }
   });
   return cartLines;
-  }
+}
+save(cartLines:CartLine[]){
+  const products:Product[] = [];
+  cartLines.forEach((c) => {
+    for(let i=0; i<c.quantity; i++){
+      products.push(c.product);
+    }
+  });
+  localStorage.setItem('products', JSON.stringify(products));
+}
+
+getQuantity():number{
+  const products = this.getProductsFromLocalStorage();
+  return products?.length || 0;
+}
 }
 

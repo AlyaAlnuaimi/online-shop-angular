@@ -21,10 +21,13 @@ export class ShopComponent implements OnInit{
       });
     }
 
-    getProducts(): Product[] {
+    getFilteredProducts():Product[]{
       return this.products.filter((p)=>
             this.filterPrice(p) && this.filterSize(p) && this.filterColor(p)
       );
+    }
+    getProducts(): Product[] {
+      return this.getFilteredProducts();
     }
 
     filterChange(filter :any){
@@ -47,5 +50,9 @@ export class ShopComponent implements OnInit{
     filterColor(p : Product){
       if(this.filter.colors.includes('')) return true;
       return this.filter.colors.includes(p.color);
+    }
+
+    getTotalCount(){
+      return this.getFilteredProducts().length;
     }
 }

@@ -1,38 +1,31 @@
-import { AfterViewInit, Component } from '@angular/core';
-declare var $:any;
+import { Component, OnInit } from '@angular/core';
+import { ApitestService } from 'src/app/serves/apitest.service';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
-export class HomeComponent implements AfterViewInit{
-  ngAfterViewInit(): void {
-    
-    // Vendor carousel
-    $('.vendor-carousel').owlCarousel({
-      loop: true,
-      margin: 29,
-      nav: false,
-      autoplay: true,
-      smartSpeed: 1000,
-      responsive: {
-          0:{
-              items:2
-          },
-          576:{
-              items:3
-          },
-          768:{
-              items:4
-          },
-          992:{
-              items:5
-          },
-          1200:{
-              items:6
-          }
-      }
-  });
-  }
+export class HomeComponent implements OnInit {
+  showCategories: boolean = true;
+  constructor(private apitest: ApitestService) {}
 
+  ngOnInit(): void {
+    setTimeout(() => {
+      console.log('timer');
+    }, 0);
+    console.log(0);
+    this.apitest.getUSAData().subscribe(
+      (data) => {
+        console.log(data);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+    console.log(1);
+  }
+  hideCategories() {
+    this.showCategories = false;
+  }
 }
